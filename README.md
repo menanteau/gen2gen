@@ -3,9 +3,9 @@
 Scripts to generate Gen2 task Scripts
 ======================================
 
-To run:
+To run on RC2:
 ```
-gen2-script-generator.py --DMticket DM-XXXX --week w_2019_38 --rerun2 RC/w_2019_34/DM-YYYY --filepath rerun_scripts/{DMticket}
+gen2-RC2-generator --DMticket DM-XXXX --week w_2019_38 --rerun2 RC/w_2019_34/DM-YYYY --filepath rerun_scripts/{DMticket}
 ```
 To run on DC2:
 
