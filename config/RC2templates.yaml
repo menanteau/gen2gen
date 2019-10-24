@@ -93,7 +93,7 @@ templates:
       #SBATCH -J {mpfile}
       srun --output /project/hsc_rc2/qaLogs1/visitAnalysis-{tract}-{tractname}-%j-%2t.out --ntasks={ntasks} --multi-prog {mpfile}
     multi:
-      "{index} visitAnalysis.py /datasets/hsc/repo --rerun {rerun} --calib /datasets/hsc/repo/CALIB --no-versions  --tract={tract} --id visit={visitID}"
+      "{mpindex} visitAnalysis.py /datasets/hsc/repo --rerun {rerun} --calib /datasets/hsc/repo/CALIB --no-versions  --tract={tract} --id visit={visitID}"
 
   compareVisitAnalysis:
     head_filter: |
@@ -105,7 +105,7 @@ templates:
       #SBATCH -J {mpfile}
       srun --output /project/hsc_rc2/qaLogs2/compareVisitAnalysis-{tract}_{tractname}_{filter}.out --ntasks={ntasks} --multi-prog {mpfile}
     multi:
-      "{index} compareVisitAnalysis.py /datasets/hsc/repo --calib /datasets/hsc/repo/CALIB --rerun {rerun} --rerun2 {rerun2} --no-versions  --tract={tract} --id visit={visitID}"
+      "{mpindex} compareVisitAnalysis.py /datasets/hsc/repo --calib /datasets/hsc/repo/CALIB --rerun {rerun} --rerun2 {rerun2} --no-versions  --tract={tract} --id visit={visitID}"
 
   matchVisits:
     head_task: |

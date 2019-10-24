@@ -58,17 +58,17 @@ class gen2generator:
         return filter_str
 
     def task_filename_tract_filter(self, task, tract, filter, ext=''):
-        index = self.templates['tasks_to_execute_ordered'].index(task)
+        index = self.templates['tasks_to_execute_ordered'].index(task) + 1
         name = os.path.join(self.filepath, f"{index:02d}_{task}_{tract}_{filter}{ext}")
         return name
 
     def task_filename_tract(self, task, tract, ext=''):
-        index = self.templates['tasks_to_execute_ordered'].index(task)
+        index = self.templates['tasks_to_execute_ordered'].index(task) + 1
         name = os.path.join(self.filepath, f"{index:02d}_{task}_{tract}{ext}")
         return name
 
     def task_filename_task(self, task, ext=''):
-        index = self.templates['tasks_to_execute_ordered'].index(task)
+        index = self.templates['tasks_to_execute_ordered'].index(task) + 1
         name = os.path.join(self.filepath, f"{index:02d}_{task}{ext}")
         return name
 
@@ -196,11 +196,11 @@ class gen2generator:
                 # The multiprog template of the slurm goes on separate file
                 outfile = self.task_filename_tract_filter(task, tract, filter, ext='.mp')
                 out = open(outfile, "w")
-                index = 0
+                mpindex = 0
                 for visitID in self.data['visits'][tract][filter]:
-                    kw.update({'index': index, 'visitID': visitID})
+                    kw.update({'mpindex': mpindex, 'visitID': visitID})
                     out.write(self.templates['templates'][task]['multi'].format(**kw) + '\n')
-                    index += 1
+                    mpindex += 1
                 out.close()
                 print(f"# file: {outfile} is ready")
 
