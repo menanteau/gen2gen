@@ -1,7 +1,15 @@
 # gen2gen
 
-Scripts to generate Gen2 task Scripts
-======================================
+Basic Scripts to generate Gen2 task Scripts
+===========================================
+
+The scripts here are intended to provide support in the Gen2 reprocessing of the DC2 and RC2 datasets until Gen3 Buttler becomes available.
+
+Gen3 is expected in early 2020 and therefore these scripts will become obsolete soon after that.
+
+Therefore the code in this repo should be considered as a **temporary, short-term solution intended only for Gen2 re-processing until Gen3 is available** and not a scalable solution or the be used as the basis for future development.
+
+With that caveat...
 
 To run on RC2:
 ```
