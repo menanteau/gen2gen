@@ -42,7 +42,7 @@ tasks_extname:
   coaddDriver: '.sh'
   multiBandDriver: '.sh'
 
-tasks_per_visit_all:
+tasks_per_visit_tracts:
   - singleFrameDriver
 
 tasks_per_tract_filter:
